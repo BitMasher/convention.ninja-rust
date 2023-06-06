@@ -1,0 +1,19 @@
+services:
+  api:
+    image: convention-ninja
+    context: .
+    container_name: api
+    depends_on:
+      - db
+    ports:
+      - 3000:3000
+    environment:
+      DATABASE_URL: mysql://root:devpw@db/labdb
+  db:
+    image: mysql
+    container_name: db
+    environment:
+      MYSQL_ROOT_PASSWORD: devpw
+      MYSQL_DATABASE: labdb
+    ports:
+      - "3306:3306"

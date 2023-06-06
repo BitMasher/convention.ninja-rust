@@ -1,0 +1,15 @@
+[package]
+name = "convention-ninja-rust"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+async-graphql = { version = "5.0.7", features = ["graphiql", "tokio", "chrono"] }
+async-graphql-warp = "5.0.7"
+rustflake = "0.1.1"
+tokio = { version = "1.27.0", features = ["macros", "rt-multi-thread"] }
+warp = "0.3.4"
+sea-orm = { version = "0.11.2", features = [ "sqlx-mysql", "runtime-tokio-rustls", "macros" ] }
+convention-ninja-domains = { path = "../../libs/domains" }
